@@ -16,7 +16,7 @@ const URL = process.env.MONGODB_URL;
 
 
 
-
+//connection to mongo DB
 mongoose.connect(URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
