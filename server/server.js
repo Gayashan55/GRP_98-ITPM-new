@@ -1,33 +1,80 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const app = express();
-require("dotenv").config();
+const http = require("http")
+const mongoose = require("mongoose")
+const express = require("express")
 
 
-const PORT = process.env.PORT || 8070;
-
-app.use(cors());
-app.use(bodyParser.json());
-
-const URL = process.env.MONGODB_URL;
+const collectorController = require("./controllers/collector_controller")
 
 
+const router = express()
+const chalk = require('chalk');
+
+log = (args) => this.info(args);
+info = (args) => console.log(chalk.blue(`[${new Date().toLocaleString()}] [INFO]`), typeof args === 'string' ? chalk.blueBright(args) : args);
+warning = (args) => console.log(chalk.yellow(`[${new Date().toLocaleString()}] [WARN]`), typeof args === 'string' ? chalk.yellowBright(args) : args);
+error = (args) => console.log(chalk.red(`[${new Date().toLocaleString()}] [ERROR]`), typeof args === 'string' ? chalk.redBright(args) : args);
+
+const db_url = "mongodb+srv://zerowaste:zerowaste0@zerowaste.0kzlg2i.mongodb.net/?retryWrites=true&w=majority"
+const port = 8070
+
+mongoose.connect(db_url)
+    .then(() => {
+        info('Mongo connected successfully.');
+        StartServer();
+    })
+    .catch(err => {
+        //    console.log(err)
+        error(err)
+    })
 
 
-mongoose.connect(URL, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
-});
+const StartServer = () => {
+    
+    router.use((req, res, next) => {
+        /** Log the request */
+        info(`Incomming - METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
 
-const connection = mongoose.connection;
-connection.once("open", () => {
-	console.log("MongoDB Connection Success!");
-})
+        res.on('finish', () => {
+            /** Log the res */
+            info(`Result - METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}] - STATUS: [${res.statusCode}]`);
+        });
 
+        next(); /**allow to pass through the middleware to next tasks */
+    })
 
-app.listen(PORT, () => {
-	console.log(`Server is up and running on Port: ${PORT}`)
-})
+    router.use(express.urlencoded({ extended: true }));
+    router.use(express.json());
+
+    /** Rules of our API */
+    router.use((req, res, next) => {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+
+        if (req.method == 'OPTIONS') {
+            res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
+            return res.status(200).json({});
+        }
+
+        next();
+    });
+
+    /** Routes */
+    router.use("/collector-controller",collectorController)
+   
+    /** Healthcheck */
+    router.get('/ping', (req, res, next) => res.status(200).json({ hello: 'world' }));
+
+    /** Error handling */
+    router.use((req, res, next) => {
+        const error = new Error('Not found');
+
+        
+
+        res.status(404).json({
+            message: error.message
+        });
+    });
+
+    http.createServer(router).listen(port, () => info(`Server is running on port ${port}`));
+} 
+
