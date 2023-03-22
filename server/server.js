@@ -14,9 +14,6 @@ app.use(bodyParser.json());
 
 const URL = process.env.MONGODB_URL;
 
-
-
-
 mongoose.connect(URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
@@ -27,6 +24,9 @@ connection.once("open", () => {
 	console.log("MongoDB Connection Success!");
 })
 
+const complaintRouter = require('./routes/complaints')
+
+app.use('/complaint',complaintRouter)
 
 app.listen(PORT, () => {
 	console.log(`Server is up and running on Port: ${PORT}`)
