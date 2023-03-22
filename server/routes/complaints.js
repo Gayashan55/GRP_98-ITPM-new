@@ -1,6 +1,7 @@
 const router = require("express").Router();
 let complaint = require("../models/complaint");
 
+
 router.route("/add").post((req,res) => {
     const province = req.body.province;
     const city = req.body.city;

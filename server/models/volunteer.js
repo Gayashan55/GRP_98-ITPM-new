@@ -2,7 +2,17 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const complaintSchema = new Schema({
+const volunteerSchema = new Schema({
+    name : {
+        type : String,
+        required : true
+    },
+
+    phone : {
+        type : String,
+        required : true
+    },
+
     province : {
         type : String,
         required : true
@@ -13,21 +23,12 @@ const complaintSchema = new Schema({
         required : true
     },
 
-    area : {
+    availability : {
         type : String,
         required : true
-    },
-
-    location : {
-        type : String,
-        required : true
-    },
-    
-    note : {
-        type : String
     }
 })
 
-const complaint = mongoose.model("complaint" , complaintSchema);
+const volunteer = mongoose.model("volunteer" , volunteerSchema);
 
-module.exports = complaint;
+module.exports = volunteer;

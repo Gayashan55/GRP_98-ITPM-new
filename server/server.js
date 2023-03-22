@@ -28,6 +28,10 @@ const complaintRouter = require('./routes/complaints')
 
 app.use('/complaint',complaintRouter)
 
+const volunteerRouter = require('./routes/volunteers')
+
+app.use('/volunteer',volunteerRouter)
+
 app.listen(PORT, () => {
 	console.log(`Server is up and running on Port: ${PORT}`)
 })
