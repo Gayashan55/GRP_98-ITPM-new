@@ -1,7 +1,7 @@
 const router = require("express").Router();
 let complaint = require("../models/complaint");
 
-
+//add complaint
 router.route("/add").post((req,res) => {
     const province = req.body.province;
     const city = req.body.city;
@@ -24,6 +24,7 @@ router.route("/add").post((req,res) => {
     })
 })
 
+//fetch complaint
 router.route("/").get((req,res)=>{
     complaint.find().then((complaints)=>{
         res.json(complaints)
@@ -32,6 +33,7 @@ router.route("/").get((req,res)=>{
     })
 })
 
+//update complaint
 router.route("/update/:id").put(async(req,res)=>{
     let complaintID = req.params.id;
     const {province, city, area, location, note} = req.body;
@@ -54,6 +56,7 @@ router.route("/update/:id").put(async(req,res)=>{
     
 })
 
+//delete complaint
 router.route("/delete/:id").delete(async(req,res)=>{
     let complaintID = req.params.id;
     
@@ -66,6 +69,7 @@ router.route("/delete/:id").delete(async(req,res)=>{
     })
 })
 
+//fetch purticular complaint
 router.route("/get/:id").get(async(req,res)=>{
     let complaintID = req.params.id;
 
