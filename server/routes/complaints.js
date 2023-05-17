@@ -7,6 +7,7 @@ router.route("/add").post((req,res) => {
     const city = req.body.city;
     const area = req.body.area;
     const location = req.body.location;
+    const imageUrl = req.body.imageUrl;
     const note = req.body.note;
 
     const newComplaint = new complaint ({
@@ -14,6 +15,7 @@ router.route("/add").post((req,res) => {
         city,
         area,
         location,
+        imageUrl,
         note
     })
 
@@ -36,13 +38,14 @@ router.route("/").get((req,res)=>{
 //update complaint
 router.route("/update/:id").put(async(req,res)=>{
     let complaintID = req.params.id;
-    const {province, city, area, location, note} = req.body;
+    const {province, city, area, location, imageUrl, note} = req.body;
 
     const updateComplaint = {
         province, 
         city, 
         area, 
         location, 
+        imageUrl,
         note
     }
 
@@ -81,5 +84,23 @@ router.route("/get/:id").get(async(req,res)=>{
         res.status(500).send({status:"Error with get complaint!", error: err.message})
     })
 })
+
+//bar chart
+router.get("/complaintchart", async (req, res) => {
+    try {
+      const complaints = await Complaint.aggregate([
+        {
+          $group: {
+            _id: "$province",
+            count: { $sum: 1 },
+          },
+        },
+      ]);
+  
+      res.json(complaints);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to retrieve complaints" });
+    }
+});
 
 module.exports = router;

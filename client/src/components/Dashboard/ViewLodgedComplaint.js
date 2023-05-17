@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "./Dashboard.css"
 import Grid from "@mui/material/Grid";
 import RightContent from './RightContent';
-import AddComplaint from '../Complaint/AddComplaint';
+import ViewLodgedComplaint from '../Complaint/ViewComplaint';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class Dashboard extends Component {
                 <Grid item xs={9} className="maincontent__container">
                     
                     <div>
-                        <AddComplaint />
+                        <ViewLodgedComplaint />
                     </div>
                 </Grid>
                 

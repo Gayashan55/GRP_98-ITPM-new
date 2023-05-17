@@ -1,61 +1,38 @@
 #mySidenav a {
-    position: absolute;
-    left: -110px;
-    transition: 0.2s;
-    padding: 12px;
-    width: 150px;
-    text-decoration: none;
-    font-size: 20px;
-    color: white;
-    border-radius: 0 6px 6px 0;
-    margin-bottom: 10px;
-    font-size: 18px;
-    text-align: left;
-  }
-  
-  #mySidenav a:hover {
-    left: 0;
-  }
+    color: rgb(0, 0, 0);
+    margin-left: 50px;
+    font-weight: 500;
+    font-size: 14px;
+}
 
-  #home {
-    top: 20px;
-    background-color: #04AA6D;
-  }
+.sidenav{
+  float: left;
+}
   
-  #volunteers {
-    top: 80px;
-    background-color: #2196F3;
-  }
-  
-  #reports {
-    top: 140px;
-    background-color: #f44336;
-  }
-  
-  #about {
-    top: 200px;
-    background-color: #7a0485;
-  }
-
-  #contact {
-    top: 260px;
-    background-color: #555
-  }
-
-  .navbar__barContent {
-    height: 100px;
+.navbar__barContent {
+    height: 50px;
     border-bottom: 1px solid #dbdbdb;
     padding-top: 10px;
+    background-color: rgb(17, 160, 112);
 }
+
 .navbar_logo{
-    width: 8%;
-    padding-right: 20px;
+    width: 80px;
+    margin-left: 10px;
     border-radius: 50%;
-    float:right;
+    margin-top: -7px;
+    float:left;
 }
 
 span {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
+.appname{
+  font-size: 26px;
+  padding-left: 20px;
+  padding-top: -20px;
+  color: rgb(0, 24, 19);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

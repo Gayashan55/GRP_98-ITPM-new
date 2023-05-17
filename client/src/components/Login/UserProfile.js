@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import './Complaint.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams, Link  } from 'react-router-dom';
 import axios from 'axios';
 
 export default function AddComplaint() {
@@ -11,6 +11,7 @@ export default function AddComplaint() {
     const [imageUrl, setImageUrl] = useState('');
     const [note, setNote] = useState('');
     const navigate = useNavigate();
+    const id = useParams();
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -23,10 +24,10 @@ export default function AddComplaint() {
             note : note
         }
     
-        await axios.post(`http://localhost:8070/complaint/add`, complaint)
+        await axios.put(`http://localhost:8070/complaint/update/${id}`, complaint)
           .then((res) => {
-            alert('Complaint Added!');
-            window.location.reload();
+            alert('Complaint Updated!');
+            navigate("/history");
           })
           .catch((error) => {
             console.log(error)
@@ -35,13 +36,13 @@ export default function AddComplaint() {
     return(
         <div class = "form">
         <form onSubmit={handleSubmit}>
-            <h4> Lodged Complaint </h4> <br/>
+            <h4> Edit Lodged Complaint </h4> <br/>
             <div class="form-group">
                 <label for="exampleInputEmail1">Province</label>
                 <select class="form-control" value={province} onChange={(event) => {
                 setProvince(event.target.value);
-                }} placeholder='Select the Province' required>
-                    <option >Select the Province</option>
+                }} placeholder='Select the Province' >
+                    <option disabled>Select the Province</option>
                     <option>Central Province </option>
                     <option>Eastern Province </option>
                     <option>Northern Province </option>
@@ -58,28 +59,28 @@ export default function AddComplaint() {
                 <label for="exampleInputPassword1">City</label>
                 <input type="text" class="form-control" value={city} onChange={(event) => {
                 setCity(event.target.value);
-                }} id="exampleInputPassword1" placeholder="City" required/>
+                }} id="exampleInputPassword1" placeholder="City" />
             </div>
 
             <div class="form-group">
                 <label for="exampleInputPassword1">Area</label>
                 <input type="text" class="form-control" value={area} onChange={(event) => {
                 setArea(event.target.value);
-                }} id="exampleInputPassword1" placeholder="Area" required/>
+                }} id="exampleInputPassword1" placeholder="Area" />
             </div>
 
             <div class="form-group">
                 <label for="exampleInputPassword1">Location</label>
                 <input type="text" class="form-control" value={location} onChange={(event) => {
                 setLocation(event.target.value);
-                }} id="exampleInputPassword1" placeholder="Location" required/>
+                }} id="exampleInputPassword1" placeholder="Location" />
             </div>
 
             <div class="form-group">
                 <label for="exampleInputPassword1">Image</label>
                 <input type="text" value={imageUrl} onChange={(event) => {
                 setImageUrl(event.target.value);
-                }}class="form-control" id="exampleInputPassword1" required/>
+                }}class="form-control" id="exampleInputPassword1" />
             </div>
             
             <div class="form-group">
@@ -89,7 +90,13 @@ export default function AddComplaint() {
                 }}id="exampleInputPassword1" />
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <Link class="btn btn-primary" to = {`/edit/`} style={{ margin: '10px', marginLeft :'270px'}}> 
+                <i className="fa fa-pencil"></i>&nbsp; Edit
+            </Link> 
+                        
+            <button class="btn btn-danger"  style={{ float: 'right', margin: '10px' }}>
+                <i className="fa fa-trash"></i>&nbsp; Delete
+            </button>
         </form>
         </div>
     )

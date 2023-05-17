@@ -6,7 +6,6 @@ const dotenv = require("dotenv");
 const app = express();
 require("dotenv").config();
 
-
 const PORT = process.env.PORT || 8070;
 
 app.use(cors());
@@ -31,6 +30,10 @@ app.use('/complaint',complaintRouter)
 const volunteerRouter = require('./routes/volunteers')
 
 app.use('/volunteer',volunteerRouter)
+
+const userRouter = require('./routes/users')
+
+app.use('/user', userRouter)
 
 app.listen(PORT, () => {
 	console.log(`Server is up and running on Port: ${PORT}`)

@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import RightContent from './RightContent';
 import AddComplaint from '../Complaint/AddComplaint';
 
-class Dashboard extends Component {
+class LodgedComplaints extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
@@ -19,9 +19,8 @@ class Dashboard extends Component {
                 </div>
                 </Grid>
                 <Grid item xs={9} className="maincontent__container">
-                    
                     <div>
-                        <AddComplaint />
+                        <AddComplaint/>
                     </div>
                 </Grid>
                 
@@ -31,4 +30,4 @@ class Dashboard extends Component {
     }
 }
  
-export default Dashboard;
+export default LodgedComplaints;

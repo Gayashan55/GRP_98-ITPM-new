@@ -6,15 +6,12 @@ function NavBar(){
     return(
         <nav>
             <div className="navbar__barContent">
-                <img src = {logo} className = "navbar_logo" alt = ""/>
-            </div>
-            <div>
-                <div id="mySidenav" class="sidenav">
-                    <a href="Dashborad" id="home">Home</a>
-                    <a href="#" id="volunteers">Volunteers</a>
-                    <a href="#" id="reports">Reports</a>
-                    <a href="#" id="about">About</a>
-                    <a href="#" id="contact">Contact</a>
+             <div id="mySidenav" class="sidenav">
+                    <a href="/" id="home">Home</a>
+                    <a href="/volunteers" id="volunteers">Volunteers</a>
+                    <a href="/reports" id="reports">Reports</a>
+                    <a href="/about" id="about">About</a>
+                    <a href="/contact" id="contact">Contact</a>
                 </div>
             </div>
         </nav>
