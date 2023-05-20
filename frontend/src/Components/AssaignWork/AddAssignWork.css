@@ -1,4 +1,4 @@
-/* src/components/Home.css */
+/* src/components/AddAssignWork.css */
 
 .logo {
     width: 120px;
@@ -17,13 +17,6 @@
     align-items: center;
 }
 
-.ant-card-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.home-button {
-    margin: 16px;
-    background-color: greenyellow;
+.ant-form {
+    width: 500px;
 }
