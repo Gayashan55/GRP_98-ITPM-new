@@ -1,7 +1,6 @@
 .dashboard{
     width:auto;
     height: 75px;
-    background-color: rgb(245, 245, 245);
 }
 
 h5{
@@ -9,19 +8,3 @@ h5{
     padding-left: 10px;
 }
 
-form .search-wrapper button {
-    float: left;
-    width: 4%;
-    padding: 8px;
-    background: #2196F3;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none;
-    cursor: pointer;
-  }
-  
-  form .search-wrapper button:hover {
-    background: #0b7dda;
-  }
-  

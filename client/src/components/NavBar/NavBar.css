@@ -1,38 +1,40 @@
 #mySidenav a {
-    color: rgb(0, 0, 0);
-    margin-left: 50px;
-    font-weight: 500;
-    font-size: 14px;
+  position: absolute;
+  left: -90px;
+  transition: 0.3s;
+  padding: 12px;
+  width: 125px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  border-radius: 0 5px 5px 0;
 }
 
-.sidenav{
-  float: left;
+#mySidenav a:hover {
+  left: 0;
 }
   
-.navbar__barContent {
-    height: 50px;
-    border-bottom: 1px solid #dbdbdb;
-    padding-top: 10px;
-    background-color: rgb(17, 160, 112);
+#home {
+  top: 20px;
+  background-color: #04AA6D;
 }
 
-.navbar_logo{
-    width: 80px;
-    margin-left: 10px;
-    border-radius: 50%;
-    margin-top: -7px;
-    float:left;
+#volunteers {
+  top: 80px;
+  background-color: #2196F3;
 }
 
-span {
-    font-size: 20px;
-    font-weight: 500;
+#reports {
+  top: 140px;
+  background-color: #f44336;
 }
 
-.appname{
-  font-size: 26px;
-  padding-left: 20px;
-  padding-top: -20px;
-  color: rgb(0, 24, 19);
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+#about {
+  top: 200px;
+  background-color: #f78c00
+}
+
+#contact {
+  top: 260px;
+  background-color: #555
 }

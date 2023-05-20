@@ -24,9 +24,10 @@ function SignIn() {
       mobileno: mobileno
     }
 
-    await axios.post(`http://localhost:8070/user/`, user)
+    await axios.get(`http://localhost:8070/user/`, user)
       .then((res) => {
         console.log('success');
+        alert('Logged in');
       })
       .catch((error) => {
         console.log(error.message)
@@ -47,7 +48,7 @@ function SignIn() {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-          />
+          required/>
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">Email</label>
@@ -57,7 +58,7 @@ function SignIn() {
             onChange={(e) => handleEmailChange(e)}
             className="form-control"
             id="exampleInputPassword1"
-          />
+          required />
         </div>
         <Link to={`/dashboard`} className="btn btn-primary" > Sign In</Link>
       </form>

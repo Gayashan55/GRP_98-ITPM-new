@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Grid from "@mui/material/Grid"; 
+import './Volunteers.css';
+import { green } from '@mui/material/colors';
 
 function Volunteers() {
   const [name, setName] = useState('');
@@ -9,7 +11,6 @@ function Volunteers() {
   const [province, setProvince] = useState('');
   const [city, setCity] = useState('');
   const [availability, setAvailability] = useState('');
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -31,20 +32,21 @@ function Volunteers() {
       })
   }
 
-
+  
   return (
-    <div>
+    <div className='volunteer'>
     <Grid container>
-    <Grid item xs={3}>
-    <div style={{marginTop:"50px", marginLeft:"50px" , marginBottom:"50px", height:"500px"}}>
-    <img src='https://st2.depositphotos.com/1017986/11249/i/950/depositphotos_112497406-stock-photo-volunteers-with-garbage-bags-cleaning.jpg' alt=''/>
-    </div>
+    <Grid item xs={5}>
+      <h3>Take Action</h3>
+      <h1> JOIN A CLEANUP </h1>
+      <h2> Join the World's largest Environmental movement!</h2>
     </Grid>
-    <Grid item xs={3}>
-    <div class='form' style={{marginTop:"70px" , marginBottom:"50px"}}>
-      <form onSubmit={handleSubmit}>
+    <Grid item xs={7}>
+    <div class='volunteer-form' 
+    style={{marginTop:"70px" , marginBottom:"50px", width:'57%', marginLeft:'200px'}}>
+      <form onSubmit={handleSubmit} >
         <br />
-        <h4>Sign Up</h4> <br />
+        <h4 style={{marginLeft:"20px"}}>Sign Up as a Volunteer</h4> <br />
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Name
@@ -80,7 +82,7 @@ function Volunteers() {
                 <select class="form-control" value={province} onChange={(event) => {
                 setProvince(event.target.value);
                 }} placeholder='Select the Province' required>
-                    <option disabled>Select the Province</option>
+                    <option >Select the Province</option>
                     <option>Central Province </option>
                     <option>Eastern Province </option>
                     <option>Northern Province </option>
@@ -103,14 +105,14 @@ function Volunteers() {
                 <select class="form-control" value={availability} onChange={(event) => {
                 setAvailability(event.target.value);
                 }}  required> 
-                    <option disabled>None</option>
+                    <option >None</option>
                     <option>Full Time</option>
                     <option>Half Time</option>
                 </select>
                 
         </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
+        <button type="submit" className="btn btn-primary" style={{marginTop:'10px'}}>
+          Sign Up
         </button>
       </form>
     </div>

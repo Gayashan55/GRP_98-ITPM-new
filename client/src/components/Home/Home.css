@@ -57,3 +57,36 @@ span .time{
   margin-top: -10px;
   font-size: 16px;
 }
+
+form .search-wrapper i {
+  float: right;
+  width: 4%;
+  padding: 8px;
+  font-size: 17px;
+  border-left: none;
+  cursor: pointer;
+  margin-top: -35px;
+  margin-right: 20px;
+}
+
+.search-wrapper {
+  float: right;
+  margin-right: 40px;
+}
+
+.logo-img{
+  width: 5%;
+  margin-left: 50px;
+}
+
+.recycle{
+  width: 40%;
+}
+
+.recycle-box{
+  background-color: rgb(188, 253, 213);
+  width: 200px;
+  height: 150px;
+  margin-left: 100px;
+  margin-bottom: 50px;
+}

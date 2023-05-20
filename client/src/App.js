@@ -12,6 +12,7 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import ViewComplaint from './components/Dashboard/ViewLodgedComplaint';
 import EditComplaint from './components/Dashboard/EditLodgedComplaint';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
 
       </Routes>
       </Router>
+      <Footer/>
     </div>
   );
 }
