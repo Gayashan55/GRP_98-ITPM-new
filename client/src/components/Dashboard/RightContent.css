@@ -1,0 +1,25 @@
+.container{
+    width:350px;
+    background-color: rgb(247, 247, 247);
+    height:max-content;
+}
+
+.complaint h6{
+    color: #000000;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+.search h6{
+    color: #000000;
+    margin-left: 30px;
+    margin-top: 50px;
+}
+
+.logout h6{
+    color: #000000;
+    margin-left: 30px;
+    margin-top: 350px;
+}

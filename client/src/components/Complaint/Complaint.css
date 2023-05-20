@@ -1,0 +1,54 @@
+.form{
+  width: 600px;
+  border-radius: 5px;
+  border-color: beige;
+  background-color: white;
+  margin-top: 30px;
+  text-align: left;
+  margin-bottom: 30px;
+  margin-left: 350px;
+}
+
+.form-group input[type], label, select, textarea, .form-control{
+  width: 500px;
+  margin-left: 20px;
+}
+
+.form h4, .table h4{
+  margin-left: 20px;
+  padding-top: 20px;
+}
+
+.btn-primary{
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.table{
+  width: 950px;
+  border-radius: 5px;
+  border-color: beige;
+  background-color: white;
+  margin-top: 30px;
+  text-align: left;
+  margin-bottom: 30px;
+  margin-left: 100px;
+}
+
+.table table{
+  margin-left: 20px;
+  width: 95%;
+}
+
+.column-container {
+  display: flex;
+  justify-content: center; /* Center the links horizontally */
+}
+
+.column-container a {
+  margin: 0 5px; /* Add some spacing between the links */
+}
+
+.column-container i{
+  font-size: 14px;
+}

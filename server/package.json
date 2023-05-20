@@ -11,10 +11,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+<<<<<<< HEAD
+    "mongoose": "^7.0.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.21",
+    "uuid": "^9.0.0"
+=======
     "mongoose": "^7.1.1",
     "nodemon": "^2.0.22"
+>>>>>>> 9382b1ff5a7f387dd21cd991b2bbada5ed642dd0
   }
 }

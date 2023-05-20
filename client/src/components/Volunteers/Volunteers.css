@@ -1,0 +1,16 @@
+.volunteer{
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.3)), url('https://th.bing.com/th/id/R.bb39b77a860452c6872de58cdf52173a?rik=rxkfKAM%2b%2bw9j%2bg&pid=ImgRaw&r=0');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-y: bottom;
+}
+
+.volunteer h1{
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.volunteer h3{
+    margin-top: 30px;
+    margin-left: 100px;
+}
