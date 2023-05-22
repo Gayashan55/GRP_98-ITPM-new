@@ -26,7 +26,7 @@ The Admin module is responsible for managing the entire website. The main featur
 - Registered Users: Displays details of registered users.
 - Profile Management: Allows the admin to update their profile, change their password, and recover a forgotten password.
 
-## Driver Module
+## Complaints
 
 The Driver module is designed for drivers to manage their assigned tasks. The main features of the Driver module include:
 
