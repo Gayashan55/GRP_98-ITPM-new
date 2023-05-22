@@ -16,7 +16,7 @@ const URL = process.env.MONGODB_URL;
 
 
 
-//connection to mongodb
+
 mongoose.connect(URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
@@ -26,6 +26,14 @@ const connection = mongoose.connection;
 connection.once("open", () => {
 	console.log("MongoDB Connection Success!");
 })
+
+const collectorComplaintRouter = require("./routes/CollectorComplaints.js");
+app.use("/CollectorComplaint",collectorComplaintRouter);
+
+const CollectorBinRouter = require("./routes/CollectorBins.js");
+app.use("/CollectorBin",CollectorBinRouter);
+
+
 
 
 app.listen(PORT, () => {
