@@ -1,6 +1,14 @@
+Group 98 
+        Contributers  
+Dias N.T.G.P 		    IT21 025358
+Herath M.H.S.M 		  IT21 114144
+L.W.S.L Senarathna  IT21014604
+Muthukumarana R.P 	IT21 007088
+
+
 # Garbage Management System
 
-The Garbage Management System is a web-based application developed using PHP and MySQL database. It consists of three modules: Admin, Driver, and User.
+The Garbage Management System is a web-based application developed using the MERN stack (MongoDB, Express.js, React, Node.js). It consists of three modules: Admin, Driver, and User.
 
 ## Admin Module
 
