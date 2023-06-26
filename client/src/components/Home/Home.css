@@ -1,29 +1,92 @@
-/* src/components/Home.css */
-
-.logo {
-    width: 120px;
-    height: 31px;
-    background: rgba(255, 255, 255, 0.3);
-    margin: 16px 24px 16px 0;
-    float: left;
+a, a:hover{
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
 }
 
-.site-layout-content {
-    background: #fff;
-    padding: 24px;
-    min-height: 380px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.fa {
+    padding: 4px;
+    font-size: 16px;
+    width: 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+    float:left;
+  }
+   
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+    margin-left: 15px;
+  }
+
+  .fa-instagram {
+    background: #f0268b;
+    color: white;
+    margin-left: 15px;
+  }
+
+.phone img, .clock img, .loc img{
+  width:4%;
 }
 
-.ant-card-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.phone img{
+  margin-left: 30px;
 }
 
-.home-button {
-    margin: 16px;
-    background-color: greenyellow;
+.clock img{
+  margin-left: 200px;
+}
+
+.loc img{
+  margin-left: 250px;
+  top:-10%;
+}
+
+.phone span, .clock span, .loc span{
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+span .time{
+  margin-top: -10px;
+  font-size: 16px;
+}
+
+form .search-wrapper i {
+  float: right;
+  width: 4%;
+  padding: 8px;
+  font-size: 17px;
+  border-left: none;
+  cursor: pointer;
+  margin-top: -35px;
+  margin-right: 20px;
+}
+
+.search-wrapper {
+  float: right;
+  margin-right: 40px;
+}
+
+.logo-img{
+  width: 5%;
+  margin-left: 50px;
+}
+
+.recycle{
+  width: 40%;
+}
+
+.recycle-box{
+  background-color: rgb(188, 253, 213);
+  width: 200px;
+  height: 150px;
+  margin-left: 100px;
+  margin-bottom: 50px;
 }

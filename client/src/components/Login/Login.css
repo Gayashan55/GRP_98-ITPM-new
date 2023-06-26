@@ -9,17 +9,11 @@
 
 .loginPage__signin, .loginPage__signup {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 15px;
 
 }
 
 .loginpage_rightcomponent input[type = "text"], input[type = "email"]{
     width: 350px;
     font-size: 14px;
-}
-
-.loginpage__main{
-    background-color: rgb(223, 223, 223);
-    border-radius: 10px;
-    border-color: rgb(156, 156, 156);
 }

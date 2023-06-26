@@ -1,19 +1,18 @@
-<<<<<<< HEAD
 import './App.css';
-import Home from './components/Home/Home';
-import Login from './components/Login/Login';
-import NavBar from './components/NavBar/NavBar';
-import Dashboard from './components/Dashboard/Dashboard';
+import Home from './Components/Home/Home';
+import Login from './Components/Login/Login';
+import NavBar from './Components/NavBar/NavBar';
+import Dashboard from './Components/Dashboard/Dashboard';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ComplaintHistory from './components/Dashboard/LodgedComplaintHistory';
-import LodgedComplaint from './components/Dashboard/LodgedComplaint';
-import Volunteers from './components/Volunteers/Volunteers';
-import Report from './components/Home/ComplaintChart';
-import About from './components/About/About';
-import Contact from './components/Contact/Contact';
-import ViewComplaint from './components/Dashboard/ViewLodgedComplaint';
-import EditComplaint from './components/Dashboard/EditLodgedComplaint';
-import Footer from './components/Footer/Footer';
+import ComplaintHistory from './Components/Dashboard/LodgedComplaintHistory';
+import LodgedComplaint from './Components/Dashboard/LodgedComplaint';
+import Volunteers from './Components/Volunteers/Volunteers';
+import Report from './Components/Home/ComplaintChart';
+import About from './Components/About/About';
+import Contact from './Components/Contact/Contact';
+import ViewComplaint from './Components/Dashboard/ViewLodgedComplaint';
+import EditComplaint from './Components/Dashboard/EditLodgedComplaint';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -37,24 +36,6 @@ function App() {
       </Router>
       <Footer/>
     </div>
-=======
-import 'antd/dist/reset.css';
-import { BrowserRouter,Routes,Route } from "react-router-dom";
-import Home from "./Components/Home/Home";
-import CollectorsResponse from './Components/Collector/CollectorResponse';
-import AddCollector from './Components/Collector/AddCollector';
-import UpdateCollector from './Components/Collector/UpdateCollector';
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element = {<Home/>}/>
-        <Route path="/collector-response" element = {<CollectorsResponse/>}/>
-        <Route path="/add-collector" element = {<AddCollector/>}/>
-        <Route path="/update-collector/:id" element = {<UpdateCollector/>}/>
-      </Routes>
-    </BrowserRouter>
->>>>>>> 9382b1ff5a7f387dd21cd991b2bbada5ed642dd0
   );
 }
 

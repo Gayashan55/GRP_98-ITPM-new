@@ -24,6 +24,7 @@ class Login extends Component {
             <div style={{marginTop:"50px"}}>
                 <Grid container>
                     <Grid item xs={8}>
+                    <img src='https://www.bindcover.com/icon/login-ico.png' alt = ''/>
                     </Grid>
                     <Grid item xs={4}>
                        <div className="loginpage__main">
@@ -43,10 +44,10 @@ class Login extends Component {
 
                                </div>
 
-                                <div className="loginpage__signupoption" style={{backgroundColor:"#acacac"}}>
+                                <div className="loginpage__signupoption" >
                                     {
                                         this.state.isLogin ?
-                                        <div className="loginPage__signin" style={{backgroundColor:"#acacac"}}>
+                                        <div className="loginPage__signin">
                                                  Don't have an account? <span onClick={this.changeLogin} style={{ "fontWeight":"500", "color":"blue", "fontSize" : "14px"}}>Sign up</span>
                                         </div> :
                                         <div className="loginPage__signup">
